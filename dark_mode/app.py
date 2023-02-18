@@ -126,8 +126,7 @@ app.layout = dmc.MantineProvider(
     Input("switch-theme", "checked"),
     prevent_intial_call=True)
 def switch_theme(theme, checked):
-    trigger = ctx.triggered[0]["prop_id"]
-    if trigger == 'switch-theme.checked':
+    if not checked:
         if theme.get("colorScheme") == "white":
             theme.update({'colorScheme': 'dark'})
         else:
