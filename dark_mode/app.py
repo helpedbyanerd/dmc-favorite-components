@@ -9,6 +9,9 @@ app = Dash(
     __name__,
 )
 
+
+
+
 app.layout = dmc.MantineProvider(
 	id="app-theme",
     theme={
@@ -122,7 +125,7 @@ app.layout = dmc.MantineProvider(
     Input('app-theme', 'theme'),
     Input("switch-theme", "checked"),
     prevent_intial_call=True)
-def update_figure(theme, checked):
+def switch_theme(theme, checked):
     trigger = ctx.triggered[0]["prop_id"]
     if trigger == 'switch-theme.checked':
         if theme.get("colorScheme") == "white":
