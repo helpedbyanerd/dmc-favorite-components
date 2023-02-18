@@ -127,12 +127,11 @@ app.layout = dmc.MantineProvider(
     prevent_intial_call=True)
 def switch_theme(theme, checked):
     if not checked:
-        if theme.get("colorScheme") == "white":
-            theme.update({'colorScheme': 'dark'})
-        else:
-            theme.update({'colorScheme': 'white'})
-        return theme
-    raise PreventUpdate
+        theme.update({'colorScheme': 'dark'})
+    else:
+        theme.update({'colorScheme': 'white'})
+    return theme
+
 
 if __name__ == "__main__":
     app.run_server(debug=True)
